@@ -1,11 +1,20 @@
-function Product(props2) {
+
+
+function Product({title,price,description,category,image}) {
   return (
-    <div>
-      <h5>{props2.title}</h5>
-      <img src={props2.src} width="200px"></img>
-      <h6>{props2.price}</h6>
+    <div className="App">
+    <h2>{title}</h2>
+    <h4> {category}</h4>
+    <img src={image}/>
+    <p>{price}</p>
+    <h4>{description}</h4>   
     </div>
+
   );
 }
+
+
+
+
 
 export default Product;
