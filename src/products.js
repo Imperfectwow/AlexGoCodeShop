@@ -89,6 +89,7 @@ const products=
     "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg"
   },
   {
+  
     "id": 12,
     "title": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
     "price": 114,

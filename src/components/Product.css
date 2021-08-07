@@ -1,0 +1,10 @@
+.wrapper {
+    display:list-item;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .backColor{
+    background-color:red;
+    display:table-row;
+  }
