@@ -3,21 +3,20 @@ import Product from "./Product"
 function Products({products}){
 
   return (
-    <div className="App">
-      <header className="App-header">
-      {products.map((products)=>(
+    <section className="products">
+ 
+      {products.map((product)=>(
         <Product
-         key={products.id}
-         title={products.title}
-         image={products.image}
-         description={products.description}
-         category={products.category}
-         price={products.price}
+         id={product.id}
+         title={product.title}
+         image={product.image}
+         description={product.description}
+         category={product.category}
+         price={product.price}
          />
-        
+    
       ))}
-      </header>
-      </div>
+    </section>
       );
 }
 
