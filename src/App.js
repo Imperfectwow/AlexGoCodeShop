@@ -12,7 +12,6 @@ const App=()=> {
     <div>
         <Header products={products} setProducts={setFilteredProducts}/>
         <Products products={filteredProducts}/>
-        
     </div>
   );
 }

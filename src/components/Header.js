@@ -1,5 +1,3 @@
-import './Header.css'
-
 import  products from '../products'
 import { useState } from 'react';
 
