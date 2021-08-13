@@ -1,11 +1,9 @@
-import  products from '../products'
 import { useState } from 'react';
 
 const Header = ({products, setProducts}) => {
 
   const filterHandler = (event) => {
       event.target.value === 'All' ? setProducts(products) : setProducts(products.filter((product) => product.category === event.target.value));
-      console.log(event.target.value);
   }
 
 const categoriesList=products.map(p=>(p.category)).filter((value,index,array)=>array.indexOf(value)===index);

@@ -1,6 +1,5 @@
 import Header from './components/Header';
 import Products from './components/Products';
-import products from './products';
 import productsList from './products';
 import { useState } from 'react';
 

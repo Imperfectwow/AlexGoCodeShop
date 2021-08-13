@@ -1,4 +1,4 @@
-import { Button, ButtonGroup } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 
 function Product({ title, price, description, category, image, id }) {
   return (
