@@ -58,12 +58,7 @@ const ProductCard=props=>{
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary">
-            Add to Card
-          </Button>
-          <Button size="small" color="primary">
-            Add to wishlist
-          </Button>
+        <Button color="primary" variant="contained">Add To Basket</Button>
         </CardActions>
       </Card>
     );
