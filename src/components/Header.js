@@ -1,6 +1,19 @@
-import CategoriesSort from "./CategoriesSort/CategoriesSort";
+import { AppBar, Toolbar, Typography } from "@material-ui/core";
+
+import React from "react";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import SortPopup from "./SortPopup/SortPopup";
+import { makeStyles } from "@material-ui/core";
+import products from "./../products";
 import { useState } from "react";
+
+//rfce
+
+const useStyles = makeStyles(() => ({
+  typegraphyStyles: {
+    flex: 1,
+  },
+}));
 
 const Header = ({ products, setProducts }) => {
   const filterHandler = (event) => {
@@ -16,21 +29,30 @@ const Header = ({ products, setProducts }) => {
     .filter((value, index, array) => array.indexOf(value) === index);
 
   const [categories] = useState(categoriesList);
+  const classes = useStyles();
   return (
-    <nav>
-      <div className="sort">
-        <div className="collection-sort">
-          <label>Categories:</label>
-          <select onChange={filterHandler}>
-            <option key={"1"}>All</option>
-            {categories.map((category) => (
-              <option key={category}>{category}</option>
-            ))}
-          </select>
+    <AppBar position="static">
+      <Toolbar>
+        <div className="sort">
+          <div className="collection-sort">
+            <label>Categories:</label>
+            <select onChange={filterHandler}>
+              <option key={"1"}>All</option>
+              {categories.map((category) => (
+                <option key={category}>{category}</option>
+              ))}
+            </select>
+          </div>
+          <SortPopup />
         </div>
-        <SortPopup />
-      </div>
-    </nav>
+
+        <Typography className={classes.typegraphyStyles}>
+          Welcome to Alexander Shop
+        </Typography>
+        <ShoppingCartIcon />
+      </Toolbar>
+    </AppBar>
   );
 };
+
 export default Header;
