@@ -1,11 +1,18 @@
+import Header from './components/Header';
 import Products from './components/Products';
 import products from './products';
+import productsList from './products';
+import { useState } from 'react';
 
-function App() {
+const App=()=> {
+  const[products,setProducts]=useState(productsList)
+  const[filteredProducts,setFilteredProducts]=useState(products)
 
   return(
     <div>
-        <Products products={products}/>
+        <Header products={products} setProducts={setFilteredProducts}/>
+        <Products products={filteredProducts}/>
+        
     </div>
   );
 }
