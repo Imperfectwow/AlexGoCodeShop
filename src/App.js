@@ -10,11 +10,24 @@ import { useState } from "react";
 const App = () => {
   const [products, setProducts] = useState(productsList);
   const [filteredProducts, setFilteredProducts] = useState(products);
+  const [cartIsShown, setCartIsShown] = useState(false);
+
+  const ShowCartHandler = () => {
+    setCartIsShown(true);
+  };
+  const HideCartHandler = () => {
+    setCartIsShown(false);
+  };
 
   return (
     <Grid container direction="column">
       <Grid item>
-        <Header products={products} setProducts={setFilteredProducts} />
+        {cartIsShown && <Cart onClose={HideCartHandler} />}
+        <Header
+          products={products}
+          setProducts={setFilteredProducts}
+          onShowCart={ShowCartHandler}
+        />
       </Grid>
 
       <Grid item container>
@@ -22,9 +35,9 @@ const App = () => {
         <Grid item xs={12} sm={8}>
           <div>
             <Content products={filteredProducts} />
-            <Cart />
           </div>
         </Grid>
+
         <Grid item xs={0} sm={2} />
       </Grid>
     </Grid>

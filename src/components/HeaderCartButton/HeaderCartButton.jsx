@@ -5,9 +5,10 @@ import React from 'react'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import classes from './HeaderCartButton';
 
-const HeaderCartButton=()=> {
+const HeaderCartButton=(props)=> {
+    debugger
     return (
-    <Button className={classes.button}>
+    <Button className={classes.button} onClick={props.onClick}>
     <span className={classes.icon}>
         <ShoppingCartIcon/>
     </span>

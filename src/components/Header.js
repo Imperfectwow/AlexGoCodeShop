@@ -16,12 +16,14 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const Header = ({ products, setProducts }) => {
+const Header = (props) => {
   const filterHandler = (event) => {
     event.target.value === "All"
-      ? setProducts(products)
-      : setProducts(
-          products.filter((product) => product.category === event.target.value)
+      ? props.setProducts(products)
+      : props.setProducts(
+          props.products.filter(
+            (product) => product.category === event.target.value
+          )
         );
   };
 
@@ -50,7 +52,7 @@ const Header = ({ products, setProducts }) => {
         <Typography className={classes.typegraphyStyles}>
           Welcome to Alexander Shop
         </Typography>
-        <HeaderCartButton />
+        <HeaderCartButton onClick={props.onShowCart} />
       </Toolbar>
     </AppBar>
   );
