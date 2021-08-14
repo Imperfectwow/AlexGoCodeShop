@@ -1,5 +1,6 @@
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
 
+import HeaderCartButton from "./HeaderCartButton/HeaderCartButton";
 import React from "react";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import SortPopup from "./SortPopup/SortPopup";
@@ -49,7 +50,7 @@ const Header = ({ products, setProducts }) => {
         <Typography className={classes.typegraphyStyles}>
           Welcome to Alexander Shop
         </Typography>
-        <ShoppingCartIcon />
+        <HeaderCartButton />
       </Toolbar>
     </AppBar>
   );

@@ -1,3 +1,5 @@
+import Basket from "./components/Basket/Basket.jsx";
+import Cart from "./components/Basket/Basket.jsx";
 import Content from "./components/Content";
 import { Grid } from "@material-ui/core";
 import Header from "./components/Header";
@@ -18,7 +20,10 @@ const App = () => {
       <Grid item container>
         <Grid item xs={0} sm={2} />
         <Grid item xs={12} sm={8}>
-          <Content products={filteredProducts} />
+          <div>
+            <Content products={filteredProducts} />
+            <Cart />
+          </div>
         </Grid>
         <Grid item xs={0} sm={2} />
       </Grid>
