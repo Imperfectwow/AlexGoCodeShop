@@ -4,6 +4,7 @@ import HeaderCartButton from "./HeaderCartButton/HeaderCartButton";
 import React from "react";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import SortPopup from "./SortPopup/SortPopup";
+import logo from "./../assets/alex-3.svg";
 import { makeStyles } from "@material-ui/core";
 import products from "./../products";
 import { useState } from "react";
@@ -34,7 +35,7 @@ const Header = (props) => {
   const [categories] = useState(categoriesList);
   const classes = useStyles();
   return (
-    <AppBar position="static">
+    <AppBar position="fixed" className={classes.appBar} color="inherit">
       <Toolbar>
         <div className="sort">
           <div className="collection-sort">
@@ -48,9 +49,17 @@ const Header = (props) => {
           </div>
           <SortPopup />
         </div>
-
-        <Typography className={classes.typegraphyStyles}>
-          Welcome to Alexander Shop
+        <Typography
+          variatn="h6"
+          color="blue"
+          className={classes.typegraphyStyles}
+        >
+          <img
+            src={logo}
+            alt="alex shop"
+            height="55px"
+            className={classes.image}
+          />
         </Typography>
         <HeaderCartButton onClick={props.onShowCart} />
       </Toolbar>

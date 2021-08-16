@@ -1,10 +1,12 @@
-import Basket from "./components/Basket/Basket.jsx";
 import Cart from "./components/Basket/Basket.jsx";
 import Content from "./components/Content";
-import { Grid } from "@material-ui/core";
+import { Fragment } from "react";
 import Header from "./components/Header";
+import PriceSlider from "./components/PriceSlider/PriceSlider.jsx";
+import RangeSlider from "./components/PriceSlider/PriceSlider.jsx";
 import React from "react";
 import productsList from "./products";
+import styles from "./index.css";
 import { useState } from "react";
 
 const App = () => {
@@ -19,28 +21,28 @@ const App = () => {
     setCartIsShown(false);
   };
 
+  const [val, setVal] = useState([30, 40]);
+  const updateRange = (e, data) => {
+    setVal(data);
+  };
+
   return (
-    <Grid container direction="column">
-      <Grid item>
+    <div>
+      <Fragment>
         {cartIsShown && <Cart onClose={HideCartHandler} />}
         <Header
           products={products}
           setProducts={setFilteredProducts}
           onShowCart={ShowCartHandler}
         />
-      </Grid>
-
-      <Grid item container>
-        <Grid item xs={0} sm={2} />
-        <Grid item xs={12} sm={8}>
-          <div>
-            <Content products={filteredProducts} />
-          </div>
-        </Grid>
-
-        <Grid item xs={0} sm={2} />
-      </Grid>
-    </Grid>
+        {/* <div style={{ width: 300, margin: 25 }}> */}
+        <RangeSlider />
+        {/* </div> */}
+        <div>
+          <Content products={filteredProducts} />
+        </div>
+      </Fragment>
+    </div>
   );
 };
 
