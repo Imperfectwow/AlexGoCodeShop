@@ -7,23 +7,24 @@ import { CardMedia } from '@material-ui/core';
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import useStyles from './ProductCard'
 
-const useStyles = makeStyles({
-  root: {
+// const useStyles = makeStyles({
+//   root: {
  
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-});
+//   },
+//   bullet: {
+//     display: 'inline-block',
+//     margin: '0 2px',
+//     transform: 'scale(0.8)',
+//   },
+//   title: {
+//     fontSize: 14,
+//   },
+//   pos: {
+//     marginBottom: 12,
+//   },
+// });
 
 
 
@@ -34,24 +35,20 @@ const ProductCard=props=>{
     const{ title, price, description, category, image, id }=props;
 
     return(
-        <Card className={classes.root} key={id}>
+        <Card className={classes.root}>
         <CardActionArea>
-         <CardMedia
-            component="img"
-            alt={title}
-            image={image}
-            title={title}
-         />
+         <CardMedia className={classes.media}
+         image={props.image} title={props.title}/>
           <CardContent>
-            <Typography gutterBottom variant="body1" component="h1">
-              {title}
+          <div className={classes.cardContent}>
+            <Typography gutterBottom variant="h5" component="h2">
+              {props.title}
             </Typography>
-            <Typography variant="body2" color="textPrimary" component="p">
-              {description}
-            </Typography>
-            <Typography variant="body1" color="primary" component="animateMotion" >
+            </div>
+            <Typography gutterBottom variant="h5" component="h2" >
                  {price}$
               </Typography>
+              <Typography dangerouslySetInnerHTML={{ __html: props.description }} variant="body2" color="textSecondary" component="p" />
           </CardContent>
         </CardActionArea>
         <CardActions>
