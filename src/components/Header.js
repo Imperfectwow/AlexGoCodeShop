@@ -6,7 +6,6 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import SortPopup from "./SortPopup/SortPopup";
 import logo from "./../assets/alex-3.svg";
 import { makeStyles } from "@material-ui/core";
-import products from "./../products";
 import { useState } from "react";
 
 //rfce
@@ -20,7 +19,7 @@ const useStyles = makeStyles(() => ({
 const Header = (props) => {
   const filterHandler = (event) => {
     event.target.value === "All"
-      ? props.setProducts(products)
+      ? props.setProducts(props.products)
       : props.setProducts(
           props.products.filter(
             (product) => product.category === event.target.value
@@ -28,7 +27,7 @@ const Header = (props) => {
         );
   };
 
-  const categoriesList = products
+  const categoriesList = props.products
     .map((p) => p.category)
     .filter((value, index, array) => array.indexOf(value) === index);
 
@@ -42,7 +41,7 @@ const Header = (props) => {
             <label>Categories:</label>
             <select onChange={filterHandler}>
               <option key={"1"}>All</option>
-              {categories.map((category) => (
+              {categoriesList.map((category) => (
                 <option key={category}>{category}</option>
               ))}
             </select>

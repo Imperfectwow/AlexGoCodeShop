@@ -1,7 +1,6 @@
 import {Grid} from "@material-ui/core";
 import ProductCard from './ProductCard'
 import React from 'react'
-import products from './../products';
 
 function Content({products}) {
     return (
