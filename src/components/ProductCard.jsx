@@ -1,9 +1,11 @@
+import { AddShoppingCart } from '@material-ui/icons';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import { CardMedia } from '@material-ui/core';
+import {IconButton} from '@material-ui/core';
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -34,6 +36,8 @@ const ProductCard=props=>{
     const classes = useStyles();
     const{ title, price, description, category, image, id }=props;
 
+    
+
     return(
         <Card className={classes.root}>
         <CardActionArea>
@@ -52,7 +56,10 @@ const ProductCard=props=>{
           </CardContent>
         </CardActionArea>
         <CardActions>
-        <Button color="primary" variant="contained">Add To Basket</Button>
+        <IconButton aria-label="Add to Cart" >
+        <AddShoppingCart />
+          </IconButton>
+        {/* <Button color="primary" variant="contained">Add To Basket</Button> */}
         </CardActions>
       </Card>
     );
