@@ -53,7 +53,7 @@ const Image = styled.img`
 `;
 
 const ImageContainer = styled.div`
-  height: 25rem;
+  height: 15rem;
   padding: 3rem;
   margin: 0 auto;
 `;

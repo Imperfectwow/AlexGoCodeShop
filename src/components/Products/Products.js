@@ -9,7 +9,10 @@ const products = [
 const Products = ({ products }) => {
   return (
     <main>
-      <Grid container justify="center" spacing={4}>
+      <Grid container
+                direction="row"
+                justifyContent="space-between"
+                alignItems="center">
         {products.map((product) => (
           <Grid item key={product.id} xs={12} sm={6} md={4} lg={2}>
             <Product product={product} />
